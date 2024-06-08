@@ -37,13 +37,13 @@ void osContGetReadData(OSContPad *pad) {
     const u32 keys = keysHeld();
 
     // Handle regular button presses
-    if (keys & KEY_A) pad->button |= A_BUTTON;
-    if (keys & KEY_B) pad->button |= B_BUTTON;
+    if (keys & KEY_A) pad->button |= D_CBUTTONS;
+    if (keys & KEY_B) pad->button |= A_BUTTON;
     if (keys & KEY_X) pad->button |= U_CBUTTONS;
-    if (keys & KEY_Y) pad->button |= D_CBUTTONS;
+    if (keys & KEY_Y) pad->button |= B_BUTTON;
     if (keys & KEY_START) pad->button |= START_BUTTON;
-    if (keys & KEY_L) pad->button |= R_TRIG;
-    if (keys & KEY_R) pad->button |= Z_TRIG;
+    if (keys & KEY_L) pad->button |= Z_TRIG;
+    if (keys & KEY_R) pad->button |= R_TRIG;
 
     // Update the stick position from D-pad keys
     if (keys & KEY_UP) pad->stick_y = 80;
